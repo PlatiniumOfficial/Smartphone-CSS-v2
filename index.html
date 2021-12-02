@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Smartphone</title>
+</head>
+<body>
+    <div class="smartphone">
+        <div class="top">
+            <div class="led">
+                <div class="back_led"></div>
+                <div class="led_color"></div>
+                <div class="led_glass"></div>
+            </div>
+            <div class="speaker"></div>
+            <div class="camera_front">
+                <div class="camera_back"></div>
+                <div class="camera_glass"></div>
+            </div>
+        </div>
+
+        <!-- Ecran active ou -->
+        <div class="display">
+
+            <!-- Bar d'état -->
+            <div class="display_status_bar">
+                <div class="left_bar">
+                    <ion-icon name="chatbox"></ion-icon>
+                </div>
+
+                <div class="right_bar">
+                    <div class="batterie">
+                        <ion-icon name="battery-half-outline"></ion-icon>
+                        <p>50 %</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Heure/date température -->
+            <div class="display_top">
+                <div class="display_top_left">
+                    <div class="time_date">
+                        <p class="time">10:00</p>
+                        <p class="date">02/11/2021</p>
+                    </div>
+                </div>
+                
+                <div class="display_top_right">
+                    <div class="weather">
+                        <img src="img/weather.png" alt="" srcset="" class="weather_img">
+                        <p class="weather_temp">10°c</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="display_search">
+                <!-- Bar de recherche Google -->
+                <ion-icon class="logo_firefox" name="logo-firefox"></ion-icon>
+                <input type="text" placeholder="Rechercher sur le Web" class="search">
+                <ion-icon class="mic" name="mic-outline"></ion-icon>
+            </div>
+
+            <div class="display_navigation">
+                <!-- Applications -->
+            </div>
+
+            <!-- Slide vers le haut pour ouvrir le menu des apps -->
+            <div class="display_menu_app">
+                <div class="menu_app_slide"></div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="home_button"></div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="js/moment-with-locales.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

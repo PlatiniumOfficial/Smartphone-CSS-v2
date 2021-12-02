@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+    font-weight: 100;
+}
+
+/* Background */
+body {
+    background-image: url(../img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Structure du smartphone */
+.smartphone {
+    width: 428px;
+    height: 926px;
+    background-color: white;
+    border-radius: 30px;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Partie haute du smartphone */
+.top {
+    height: 7%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Led de notification */
+.led {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.led .back_led {
+    width: 14px;
+    height: 14px;
+    background-color: #252525;
+    border: 0.5px solid black;
+    border-radius: 8px;
+    position: absolute;
+}
+.led .led_color {
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+    background: #ffffff;
+    opacity: 0%;
+    background-blend-mode: lighten;
+    filter: blur(0.5px);
+    position: absolute;
+    animation: led_notif 3s 1s linear infinite;
+}
+.led .led_glass {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(147.2deg, rgba(255, 255, 255, 0.24) 29.84%, rgba(255, 255, 255, 0.04) 52.89%, rgba(255, 255, 255, 0.04) 52.89%);
+}
+@keyframes led_notif {
+    50% {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+    }
+}
+
+.speaker {
+    width: 70px;
+    height: 10px;
+    background-color: black;
+    border-radius: 8px;
+}
+
+.camera_back, .camera_glass{
+    width: 11px;
+    height: 11px;
+    border-radius: 6px;
+}
+.camera_back {
+    position: absolute;
+    background-color: rgb(37, 37, 37);
+    border: 1px solid black;
+}
+.camera_glass {
+    position: relative;
+    background: linear-gradient(146.64deg, rgba(255, 255, 255, 0.27) 29.06%, rgba(255, 255, 255, 0) 81.57%);
+}
+
+/* écran éteint */
+.display {
+    width: 420px;
+    height: 86%;
+    background: rgba(0, 0, 0, 0.95) linear-gradient(140.62deg, rgba(255, 255, 255, 0.16) 19.73%, rgba(255, 255, 255, 0.04) 55.56%);
+    border: 3px solid black;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+/* Partie basse du smartphone */
+.bottom {
+    height: 7%;
+    display: flex;
+    align-items: center;
+}
+
+/* Bouton en bas du smartphone */
+.bottom .home_button {
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(0, 0, 0, 0.300);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.bottom .home_button:hover {
+    border: 3px solid  rgba(36, 112, 163, 0.350);
+    box-shadow: inset 0px 0px 2px #2470A3, 0px 0px 2px #2470A3;
+}
+
+
+
+/* Partie du smartphone quand il est allumer */
+.display.active {
+    height: 86%;
+    background-image: url(../img/background.png);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Barre en haut de l'ecran */
+.display .display_status_bar {
+    height: 0;
+    margin: 2px 5px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0%;
+    transition: 0.5s;
+}
+.display.active .display_status_bar { 
+    height: 20px;
+    opacity: 100%;
+}
+
+/* Cotter droit */
+.display.active .display_status_bar .right_bar { 
+    opacity: 100%;
+}
+/* Icone + pourcentage de batterie */
+.right_bar .batterie {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+}
+.right_bar .batterie p {
+    font-size: 10px;
+}
+
+/* display weather + time_date */
+.display .display_top {
+    height: 400px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin: auto 10px;
+    scale: 1.2;
+    opacity: 0;
+    transition: 0.5s;
+}
+.display.active .display_top { 
+    scale: none;
+    opacity: 100%;
+}
+
+
+.display_top_left .time_date .time {
+    height: 35px;
+    font-size: 35px;
+    font-weight: 300;
+}
+.display_top_left .time_date .date { 
+    font-size: 20px;
+}
+
+.display_top_right .weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.display_top_right .weather .weather_img {
+    height: 45px;
+}
+
+/* Barre de recherche */
+.display .display_search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    scale: 0.5;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.display.active .display_search {
+    opacity: 80%;
+    background-color: white;
+    margin: auto 20px;
+    border-radius: 8px;
+    font-size: 30px;
+    scale: 1;
+}
+
+.display .display_search .search {
+    height: 100%;
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-weight: 300;
+}
+.display.active .display_search .search:focus {
+    outline: none;
+}
+.display .display_search ion-icon {
+    margin: auto 10px;
+}
+.display .display_search .logo_firefox {
+    color: orangered;
+}
